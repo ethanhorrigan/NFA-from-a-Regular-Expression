@@ -3,11 +3,14 @@
 
 def shunt(infix):
 
+    # Specials Dictionary
     specials = {'*': 50, '.': 40, '|': 30}
 
+    # pofix & stack string (empty)
     pofix = ""
     stack = ""
 
+    #loop infix string
     for c in infix:
         if c == '(':
             stack = stack + c

@@ -36,16 +36,6 @@ initially restrict the non-special characters your program works with to 0 and
 and the characters a to z, and A to Z.
 ```
 
-### Running
-
-```
-$ git clone https://github.com/ethanhorrigan/NFA-from-a-Regular-Expression.git
-```
-
-```
-
-```
-
 
 ## Built With
 

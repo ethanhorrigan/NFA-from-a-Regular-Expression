@@ -45,6 +45,8 @@ and the characters a to z, and A to Z.
 
 https://swtch.com/~rsc/regexp/regexp1.html
 
+Python Dictionaries - https://realpython.com/python-dicts/
+
 ## Authors
 
 * **Ethan Horrigan** - *Developer* - [Ethan Horrigan](https://github.com/ethanhorrigan)

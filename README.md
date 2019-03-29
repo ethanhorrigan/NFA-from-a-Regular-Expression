@@ -47,6 +47,9 @@ https://swtch.com/~rsc/regexp/regexp1.html
 
 Python Dictionaries - https://realpython.com/python-dicts/
 
+I read some answers from this forum to further my understanding of the Shunting Yard Algorithm
+- https://codereview.stackexchange.com/questions/201232/shunting-yard-algorithm
+
 ## Authors
 
 * **Ethan Horrigan** - *Developer* - [Ethan Horrigan](https://github.com/ethanhorrigan)

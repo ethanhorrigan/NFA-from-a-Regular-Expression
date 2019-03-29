@@ -42,13 +42,19 @@ and the characters a to z, and A to Z.
 * [Python (Anaconda)](https://www.anaconda.com/distribution/)
 
 ## Research
+Converting infix expressions to postfix expressions
+- http://www.oxfordmathcenter.com/drupal7/node/628
 
-https://swtch.com/~rsc/regexp/regexp1.html
+Regular Expression Matching
+- https://swtch.com/~rsc/regexp/regexp1.html
 
-Python Dictionaries - https://realpython.com/python-dicts/
+Python Dictionaries
+- https://realpython.com/python-dicts/
 
 I read some answers from this forum to further my understanding of the Shunting Yard Algorithm
 - https://codereview.stackexchange.com/questions/201232/shunting-yard-algorithm
+
+
 
 ## Authors
 

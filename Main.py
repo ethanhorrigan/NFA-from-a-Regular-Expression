@@ -4,12 +4,10 @@
 
 # Shunting Yard Algorithm
 def shunt(infix):
+    # Specials Dictionary with character and precedence
+    specials = {'+': 70, '?': 60, '*': 50, '.': 40, '|':30}
 
-
-    # Specials Dictionary
-    specials = {'*': 50, '.': 40, '|': 30}
-
-    # pofix & stack string (empty)
+    # Empty Pofix & Stack Strick
     pofix = ""
     stack = ""
 
@@ -36,7 +34,7 @@ def shunt(infix):
 
     return pofix
 
-print(shunt("(a.b)|(c*.d)"))
+# print(shunt("(a.b)|(c*.d)"))
 
 
 #State Class
@@ -189,9 +187,63 @@ def followes(state):
 
     return states
 
-def match(setting, expression, string):
-    if setting == 1:
-        #Infix expression to Postfix using shunt function
-        postfix = shunt(expression)
+def match(opt,infix,string):
+    if opt == 1:
+        #Converts infix to postfix
+        postfix = shunt(infix)
+        #Creates an NFA from postfix 
+        nfa = compile(postfix)
+    elif opt == 2:
+        #Sets infx to postfix variable
+        postfix = infix
+        #Creates an NFA from postfix 
+        nfa = compile(postfix)
 
+    current = set()
+    next = set()
 
+    current |= followes(nfa.initial)
+
+    #Loop through characters in the string
+    for s in string:
+        #Loop through states
+        for c in current:
+            #Checks if c.label and s are equal 
+            if c.label == s:
+                #add to the next set of states
+                next |= followes(c.edge1)
+
+        #Setting current set of states to next state
+        current = next
+        #clear set for next character
+        next = set()
+
+    return (nfa.accept in current)
+
+#Running boolean initialized to false (While false menu will continue to run)
+running = False
+
+#While Loop containing options for user input
+while running != True:
+    print("\nPlease Choose an Option:\n[1] Enter Infix \n[2] Enter Postfix \n[3] Exit\n")
+    opt = input("Option: ")
+
+    #User can enter a infix expression & a string     
+    if opt == "1":
+        infix = input("Enter Infix Expression:")
+        stringi = input("Enter String:")
+        print("\n")
+        print(" Postfix: ",shunt(infix))
+        print("",match(1,infix,stringi),"\n Infix:",infix,"\n String:",stringi)
+        print("\n")
+    #User can enter a postfix expression & a string      
+    elif opt == "2":
+        postfix = input("Enter Postfix Expression:")
+        stringp = input("Enter String:")
+        print("\n")
+        print("",match(2,postfix,stringp),"\n Postfix:",postfix,"\n String:",stringp)
+        print("\n")
+    #Exit Program
+    elif opt == "3":
+        running = True
+            

@@ -14,6 +14,15 @@ navigate inside the project within cmd and use this command
 $ python.exe main.py
 ```
 
+## Using the Program
+
+The Menu
+![alt text](https://github.com/ethanhorrigan/NFA-from-a-Regular-Expression/blob/master/screenshots/menu_1.PNG "Menu")
+
+![alt text](https://github.com/ethanhorrigan/NFA-from-a-Regular-Expression/blob/master/screenshots/menu_2.PNG "Menu 2")
+
+![alt text](https://github.com/ethanhorrigan/NFA-from-a-Regular-Expression/blob/master/screenshots/menu_2.PNG "Menu 3")
+
 ### Problem Statement
 
 ```
@@ -48,7 +57,7 @@ and the characters a to z, and A to Z.
 Converting a Regular Expression to an NFA
 ![alt text](https://github.com/ethanhorrigan/NFA-from-a-Regular-Expression/blob/master/research/RegularExpressionToNFA.PNG "Convert Regular Expression to NFA")
 
-## Resoruces
+## Resources
 Converting infix expressions to postfix expressions
 - http://www.oxfordmathcenter.com/drupal7/node/628
 

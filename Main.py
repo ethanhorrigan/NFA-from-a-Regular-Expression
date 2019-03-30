@@ -175,7 +175,7 @@ def compile(postfix):
 
     return nfastack.pop()
 
-def follews(state):
+def followes(state):
 
     #Create set of States and add
     states = set()

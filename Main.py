@@ -22,11 +22,13 @@ def shunt(infix):
                 pofix = pofix + stack[-1]
                 stack = stack[:-1]
             stack = stack[:-1] 
+        #If loop encounters special character, check if a character in the stack has higher precedence, add it to postfix 
         elif c in specials:
             while stack and specials.get(c, 0) <= specials.get(stack[-1], 0):
                 pofix = pofix + stack[-1]
                 stack = stack[:-1]  
             stack = stack + c
+        #If loop encounters anything else, add to stack
         else:
             pofix = pofix + c
 
@@ -119,7 +121,7 @@ def compile(postfix):
             #Pop one nfa off the stack
             nfa1 = nfastack.pop()
 
-            #Create 2 new states, 1 inital and 1 accept
+            #Create 2 new states
             initial = state()
             accept = state()
 
@@ -139,7 +141,7 @@ def compile(postfix):
             #Pop one NFA off the stack
             nfa1 = nfastack.pop()
 
-            #Create 2 new states, 1 inital and 1 accept
+            #Create 2 new states
             initial = state()
             accept = state()
 

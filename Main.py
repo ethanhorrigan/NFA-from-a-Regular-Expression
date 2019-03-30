@@ -175,4 +175,23 @@ def compile(postfix):
 
     return nfastack.pop()
 
+def follews(state):
+
+    #Create set of States and add
+    states = set()
+    states.add(state) 
+
+    if state.label is None:
+        if state.edge1 is not None:
+            states |= followes(state.edge1)
+        if state.edge2 is not None:
+            states |= followes(state.edge2)
+
+    return states
+
+def match(setting, expression, string):
+    if setting == 1:
+        #Infix expression to Postfix using shunt function
+        postfix = shunt(expression)
+
 

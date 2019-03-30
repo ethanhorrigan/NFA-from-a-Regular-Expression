@@ -41,7 +41,13 @@ and the characters a to z, and A to Z.
 
 * [Python (Anaconda)](https://www.anaconda.com/distribution/)
 
+
 ## Research
+
+Converting a Regular Expression to an NFA
+![alt text](https://github.com/ethanhorrigan/NFA-from-a-Regular-Expression/blob/master/research/RegularExpressionToNFA.PNG "Convert Regular Expression to NFA")
+
+## Resoruces
 Converting infix expressions to postfix expressions
 - http://www.oxfordmathcenter.com/drupal7/node/628
 

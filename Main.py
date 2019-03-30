@@ -13,8 +13,10 @@ def shunt(infix):
 
     #loop infix string
     for c in infix:
+        #If loop encounters open bracket, add to stack.
         if c == '(':
             stack = stack + c
+        #If loop encounters closing bracket, take all off stack & add to postfix
         elif c == ')':
             while stack[-1] != '(':
                 pofix = pofix + stack[-1]
@@ -99,7 +101,6 @@ def compile(postfix):
             initial = state()
             accept = state()
 
-            #E arrows
             #Connect new initial to nfa1 inital
             initial.edge1 = nfa1.initial
             #Accept if string is empty
@@ -122,7 +123,6 @@ def compile(postfix):
             initial = state()
             accept = state()
 
-            #E arrows
             #Connect new initial to nfa1 inital
             initial.edge1 = nfa1.initial
 
@@ -136,14 +136,13 @@ def compile(postfix):
             nfastack.append(newNFA)
         #0 or 1
         elif c == '?':
-            #Pop one nfa off the stack
+            #Pop one NFA off the stack
             nfa1 = nfastack.pop()
 
             #Create 2 new states, 1 inital and 1 accept
             initial = state()
             accept = state()
 
-            #E arrows
             #Accept if string is empty
             initial.edge2 = accept
             #Connect new initial to nfa1 inital
@@ -152,13 +151,12 @@ def compile(postfix):
             #String is accepted
             nfa1.accept.edge2 = accept
 
-            #Create new nfa and add back to the stack
+            #Create new nfa and add to the stack
             newNFA = nfa(initial, accept)
             nfastack.append(newNFA)
-        #Other Characters
         else: 
             
-            #Create 2 new states, 1 inital and 1 accept
+            #Create 2 new states
             accept = state()
             initial = state()
 
@@ -175,13 +173,16 @@ def compile(postfix):
 
 def followes(state):
 
-    #Create set of States and add
+    #Create new Set
     states = set()
+    #Add state to states set
     states.add(state) 
 
     if state.label is None:
+        # If the state has an edge 1 follow it
         if state.edge1 is not None:
             states |= followes(state.edge1)
+        # If the state has an edge 2 follow it
         if state.edge2 is not None:
             states |= followes(state.edge2)
 
@@ -194,7 +195,7 @@ def match(opt,infix,string):
         #Creates an NFA from postfix 
         nfa = compile(postfix)
     elif opt == 2:
-        #Sets infx to postfix variable
+        #Sets infix to postfix variable
         postfix = infix
         #Creates an NFA from postfix 
         nfa = compile(postfix)

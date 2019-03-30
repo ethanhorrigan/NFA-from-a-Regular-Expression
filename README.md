@@ -9,8 +9,9 @@ A Python application which can build a non-deterministic finite automaton (NFA) 
 $ git clone https://github.com/ethanhorrigan/NFA-from-a-Regular-Expression.git
 ```
 
+navigate inside the project within cmd and use this command
 ```
-
+$ python.exe main.py
 ```
 
 ### Problem Statement
@@ -60,13 +61,14 @@ Python Dictionaries
 I read some answers from this forum to further my understanding of the Shunting Yard Algorithm
 - https://codereview.stackexchange.com/questions/201232/shunting-yard-algorithm
 
-
+Infix, Prefix & Postfix expression
+- http://interactivepython.org/runestone/static/pythonds/BasicDS/InfixPrefixandPostfixExpressions.html
 
 ## Authors
 
 * **Ethan Horrigan** - *Developer* - [Ethan Horrigan](https://github.com/ethanhorrigan)
 
-
 ## Acknowledgments
 
 * Ian McLoughlin's Video Tutorials on various Algorithms
+* Various articles I read, links are under 'Resources'

@@ -116,7 +116,7 @@ def compile(postfix):
             #Create new nfa and add back to the stack
             newNFA = nfa(initial, accept)
             nfastack.append(newNFA)
-        #One or more
+        #None or more
         elif c == '+':
             #Pop one nfa off the stack
             nfa1 = nfastack.pop()
